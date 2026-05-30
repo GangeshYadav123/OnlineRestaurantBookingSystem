@@ -36,12 +36,17 @@ const Reservation = () => {
       setTime("");
       setDate("");
       navigate("/success");
-    } catch (error) {
-      toast.error(
-        error.response?.data?.message ||
-          "Request failed. Backend may be waking up. Try again."
-      );
-    }
+      } catch (error) {
+  console.log("FULL ERROR:", error);
+  console.log("ERROR RESPONSE:", error.response);
+  console.log("ERROR MESSAGE:", error.message);
+
+  toast.error(
+    error.response?.data?.message ||
+      error.message ||
+      "Request failed. Backend may be waking up. Try again."
+  );
+}
   };
 
   return (
