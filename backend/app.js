@@ -11,7 +11,7 @@ console.log("Loaded MONGO_URI:", process.env.MONGO_URI);
 app.use(
   cors({
     origin: [process.env.FRONTEND_URL],
-    methods: ["POST"],
+    methods: ["POST","GET"],
     credentials: true,
   })
 );
